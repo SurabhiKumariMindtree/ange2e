@@ -1,0 +1,56 @@
+<!--<h1>
+  {{title}}
+</h1>-->
+<div>
+    <form #bookForm="ngForm">
+        <label>TITLE:</label>
+        <input name='title' id='title' type="text" [(ngModel)]="title" required><br><br>
+        <label>AUTHOR:</label>
+        <input name='author' id='author' type="text" [(ngModel)]="author"><br><br>
+        <label>PUBLISHER:</label>
+        <input name='pubisher' id='publisher' type="text" [(ngModel)]="publisher"><br><br>
+        <label>CATEGORY:</label>
+        <input name='category' id='category' type="text" [(ngModel)]="category"><br><br>
+        <!--<input name='id' id='id' type="text" value="{{this.id}}"><br><br>-->
+
+    </form>
+</div>
+<!--<input type="submit" value="Submit"><br><br><br><br>
+            <input type="submit" value="Submit"><br><br><br><br>-->
+<button type="submit" value="Submit" (click)="addBook(bookForm.value)">Submit</button> <br><br><br><br>
+<button type="submit" value="getdata" (click)="getBook(bookForm.value)">Get Data</button> <br>
+
+<h2>Book Details</h2>
+<div *ngFor="let b of book">
+    <ul>
+        <li>Title: {{b.title}}</li>
+        <li>Author: {{b.author}}</li>
+        <li>Publisher: {{b.publisher}}</li>
+        <li>Category: {{b.category}}</li>
+        <li>ID: {{b._id}}</li>
+    </ul>
+
+</div><br><br>
+
+<h2>Update My Library</h2>
+<div>
+    <form #bookForm3="ngForm">
+        <label>ID:</label>
+        <input name='id' id='id' type="text" [(ngModel)]="id"> <br><br>
+        <label>TITLE:</label>
+        <input name='title' id='title' type="text" [(ngModel)]="title1" required><br><br>
+        <label>AUTHOR:</label>
+        <input name='author' id='author' type="text" [(ngModel)]="author1"><br><br>
+        <label>PUBLISHER:</label>
+        <input name='pubisher' id='publisher' type="text" [(ngModel)]="publisher1"><br><br>
+        <label>CATEGORY:</label>
+        <input name='category' id='category' type="text" [(ngModel)]="category1"><br><br>
+        <!--<input name='id' id='id' type="text" value="{{this.id}}"><br><br>-->
+
+    </form>
+</div>
+
+<button type="submit" value="update" (click)="updateBook(bookForm3.value)">Update</button> <br><br><br><br>
+<form #bookForm2="ngForm">
+    <input name='id' id='id' type="text" [ngModel]="id1"></form><br><br>
+<button type="submit" value="delete" (click)="deleteBook(bookForm2.value)">Delete</button> <br><br><br><br>
